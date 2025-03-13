@@ -5,53 +5,53 @@ using WebServicesParcial1.Models;
 
 namespace WebServicesParcial1.Controllers
 {
-    [RoutePrefix("api/Student")]
+    [RoutePrefix("api/Computador")]
     public class StudentController : ApiController
     {
         [HttpGet]
         [Route("ConsultarTodos")]
-        public List<Student> ConsultarTodos()
+        public List<object> ConsultarTodos()
         {
-            clsStudent st = new clsStudent();
-            return st.ConsultarTodos();
+            clsComputador comp = new clsComputador();
+            return comp.ConsultarTodos();
         }
         [HttpGet]
-        [Route("ConsultarXDocumento")]
-        public Student ConsultarXDocumento(string Documento)
+        [Route("ConsultarXId")]
+        public object ConsultarXId(int id)
         {
-            clsStudent st = new clsStudent();
-            return st.Consultar(Documento);
+            clsComputador comp = new clsComputador();
+            return comp.ConsultarXId(id);
         }
         [HttpPost]
         [Route("Insertar")]
-        public string Insertar([FromBody] Student student)
+        public string Insertar([FromBody] Computador computador)
         {
-            clsStudent st= new clsStudent();
-            st._student = student;
-            return st.Insertar();
+            clsComputador comp = new clsComputador();
+            comp._computador = computador;
+            return comp.Insertar();
         }
         [HttpPut]
         [Route("Actualizar")]
-        public string Actualizar([FromBody] Student student)
+        public string Actualizar([FromBody] Computador computador)
         {
-            clsStudent st = new clsStudent();
-            st._student = student;
-            return st.Actualizar();
+            clsComputador comp = new clsComputador();
+            comp._computador = computador;
+            return comp.Actualizar();
         }
         [HttpDelete]
         [Route("Eliminar")]
-        public string Eliminar([FromBody] Student student)
+        public string Eliminar([FromBody] Computador computador)
         {
-            clsStudent st = new clsStudent();
-            st._student = student;
-            return st.Eliminar();
+            clsComputador comp = new clsComputador();
+            comp._computador = computador;
+            return comp.Eliminar();
         }
         [HttpDelete]
-        [Route("EliminarXDocumento")]
-        public string EliminarXDocumento(string Documento)
+        [Route("EliminarXId")]
+        public string EliminarXId(int id)
         {
-            clsStudent st = new clsStudent();
-            return st.Eliminar(Documento);
+            clsComputador comp = new clsComputador();
+            return comp.Eliminar(id);
         }
     }
 }

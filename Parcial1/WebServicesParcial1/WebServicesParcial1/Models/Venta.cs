@@ -9,15 +9,23 @@
 
 namespace WebServicesParcial1.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
-    public partial class Student
+    public partial class Venta
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string Document { get; set; }
-        public Nullable<int> Age { get; set; }
+        public int id_venta { get; set; }
+        public Nullable<System.DateTime> fecha_venta { get; set; }
+        public int id_cliente { get; set; }
+        public int id_computador { get; set; }
+        public int id_agencia { get; set; }
+
+        [JsonIgnore]
+        public virtual Agencia Agencia { get; set; }
+        [JsonIgnore]
+        public virtual Cliente Cliente { get; set; }
+        [JsonIgnore]
+        public virtual Computador Computador { get; set; }
     }
 }

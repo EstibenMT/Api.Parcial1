@@ -10,13 +10,14 @@
 namespace WebServicesParcial1.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbParcial1Entities : DbContext
+    public partial class BDExamen1Entities : DbContext
     {
-        public dbParcial1Entities()
-            : base("name=dbParcial1Entities")
+        public BDExamen1Entities()
+            : base("name=BDExamen1Entities")
         {
         }
     
@@ -25,6 +26,10 @@ namespace WebServicesParcial1.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Agencia> Agencias { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Computador> Computadors { get; set; }
+        public virtual DbSet<TipoComputador> TipoComputadors { get; set; }
+        public virtual DbSet<Venta> Ventas { get; set; }
     }
 }
