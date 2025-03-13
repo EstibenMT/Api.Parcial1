@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "76334e2a-25df-4abe-a7e7-1c92aa772373",
+		"name": "ServiciosParcial1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38468496"
+	},
+	"item": [
+		{
+			"name": "Computador",
+			"item": [
+				{
+					"name": "ConsultarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_serv}}{{api}}{{serv_student}}ConsultarTodos",
+							"host": [
+								"{{base_url_serv}}{{api}}{{serv_student}}ConsultarTodos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarXId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_serv}}{{api}}{{serv_computador}}ConsultarXId?id=6",
+							"host": [
+								"{{base_url_serv}}{{api}}{{serv_computador}}ConsultarXId"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insertar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"num_procesadores\": 10,\r\n  \"marca_procesador\": \"Intel Ultra\",\r\n  \"tam_disco\": \"1000 GB\",\r\n  \"tam_memoria\": \"64 GB\",\r\n  \"componentes\": \"Trclado\",\r\n  \"id_tipo\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_serv}}{{api}}{{serv_computador}}Insertar",
+							"host": [
+								"{{base_url_serv}}{{api}}{{serv_computador}}Insertar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_computador\": 5,\r\n  \"num_procesadores\": 10,\r\n  \"marca_procesador\": \"Intel Ultra\",\r\n  \"tam_disco\": \"1000 GB\",\r\n  \"tam_memoria\": \"64 GB\",\r\n  \"componentes\": \"Trclado, mause\",\r\n  \"id_tipo\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_serv}}{{api}}{{serv_computador}}Actualizar",
+							"host": [
+								"{{base_url_serv}}{{api}}{{serv_computador}}Actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Id\": 11, \r\n  \"Name\": \"Estiben\",\r\n  \"LastName\": \"Montoya Taborda\",\r\n  \"Document\": \"1017222207\",\r\n  \"Age\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_serv}}{{api}}{{serv_student}}Eliminar",
+							"host": [
+								"{{base_url_serv}}{{api}}{{serv_student}}Eliminar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarXId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_serv}}{{api}}{{serv_computador}}EliminarXId?id=8",
+							"host": [
+								"{{base_url_serv}}{{api}}{{serv_computador}}EliminarXId"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_serv",
+			"value": "http://localhost:53715/",
+			"type": "string"
+		},
+		{
+			"key": "api",
+			"value": "api/",
+			"type": "string"
+		},
+		{
+			"key": "serv_computador",
+			"value": "Computador/",
+			"type": "string"
+		}
+	]
+}
