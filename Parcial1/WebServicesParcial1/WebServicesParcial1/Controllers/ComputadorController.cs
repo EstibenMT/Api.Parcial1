@@ -6,7 +6,7 @@ using WebServicesParcial1.Models;
 namespace WebServicesParcial1.Controllers
 {
     [RoutePrefix("api/Computador")]
-    public class StudentController : ApiController
+    public class ComputadorController : ApiController
     {
         [HttpGet]
         [Route("ConsultarTodos")]
